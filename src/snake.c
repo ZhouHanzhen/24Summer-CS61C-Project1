@@ -83,12 +83,7 @@ int main(int argc, char *argv[]) {
   // Write updated board to file or stdout
   if (out_filename != NULL) {
     // TODO: Save the board to out_filename
-    FILE *fp = fopen(out_filename, "w");
-    for (unsigned int i = 0; i < state->num_rows; i++) {
-      fputs(state->board[i], fp);
-    }
-    fclose(fp);
-
+    save_board(state, out_filename);
   } else {
     // TODO: Print the board to stdout
     for (unsigned int i = 0; i < state->num_rows; i++) {
